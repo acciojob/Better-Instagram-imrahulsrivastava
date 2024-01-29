@@ -1,22 +1,19 @@
-const images = document.querySelectorAll(".image");
-
 let id = 1;
 let draggingElement = null;
 
+const images = document.querySelectorAll(".image");
 images.forEach((e) => {
-  e.id = `div${id++}`;
+  e.id = `drag${id++}`;
   e.addEventListener("dragstart", onDragStart);
   e.addEventListener("dragover", onDragOver);
   e.addEventListener("drop", onDrop);
 });
 
 function onDragStart(event) {
-  console.log("Dragging Start");
   draggingElement = event.currentTarget;
 }
 
 function onDragOver(event) {
-  console.log("Dragging Over");
   if (draggingElement.parentNode.id === event.currentTarget.id) {
     return;
   }
@@ -36,4 +33,5 @@ function onDrop(event) {
   draggingElement.id = id;
   draggingElement.style.backgroundImage = bgImg;
   draggingElement.innerText = text;
+  draggingElement = null;
 }
