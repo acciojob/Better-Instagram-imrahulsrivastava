@@ -1,4 +1,10 @@
+let count = 1;
 let draggingElement = null;
+
+const imgs = document.querySelectorAll("img");
+imgs.forEach((e) => {
+  e.id = `drag${count++}`;
+});
 
 const images = document.querySelectorAll(".image");
 images.forEach((e) => {
