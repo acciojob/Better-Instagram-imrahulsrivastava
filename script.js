@@ -3,7 +3,7 @@ let draggingElement = null;
 
 const images = document.querySelectorAll(".image");
 images.forEach((e) => {
-  e.id = `div${id++}`;
+  e.id = `drag${id++}`;
   e.addEventListener("dragstart", onDragStart);
   e.addEventListener("dragover", onDragOver);
   e.addEventListener("drop", onDrop);
